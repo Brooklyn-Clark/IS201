@@ -1,0 +1,51 @@
+:root {
+  --primary: #0085A1;
+  --body-font: 'Lora', serif;
+  --heading-font: 'Open Sans', sans-serif;
+  --body-color: #212529;
+  --bg-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--body-color);
+  background: var(--bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 1.5rem 0 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--body-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primary);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

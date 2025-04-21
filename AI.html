@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bead a Bracelet</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: linear-gradient(to top, #fefae0, #e0fbfc);
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      color: #007c91;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    .jars {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .jar {
+      width: 90px;
+      height: 120px;
+      border: 3px solid #bde0fe;
+      border-radius: 0 0 15px 15px;
+      background: radial-gradient(circle, #ffffff 60%, #caf0f8);
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+      padding: 0.3rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .bead {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 0;
+      cursor: grab;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      border: 1px solid white;
+      transition: transform 0.2s;
+      z-index: 2;
+    }
+
+    .bead:hover {
+      transform: scale(1.25);
+    }
+
+    .bead.shell {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Sea_shell_icon.png');
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+      border-radius: 50%;
+    }
+
+    .string {
+      width: 80%;
+      height: 4px;
+      margin: 0 auto 2rem auto;
+      background: white;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 0;
+      padding: 0.5rem 0;
+      position: relative;
+      box-shadow: inset 0 0 4px rgba(0,0,0,0.15);
+      overflow-x: auto;
+    }
+
+    .bead.placed {
+      cursor: default;
+      position: relative;
+      margin: 0 -2px;
+    }
+
+    .reset-btn {
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .reset-btn:hover {
+      background-color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bead a Bracelet! 🐚</h1>
+  <div class="jars">
+    <div class="jar">
+      <div class="bead" draggable="true" style="background-color: #ffd6a5;"></div>
+      <div class="bead" draggable="true" style="background-color: #fcd5ce;"></div>
+      <div class="bead shell" draggable="true"></div>
+    </div>
+    <div class="jar">
+      <div class="bead" draggable="true" style="background-color: #a2d2ff;"></div>
+      <div class="bead" draggable="true" style="background-color: #bde0fe;"></div>
+      <div class="bead shell" draggable="true"></div>
+    </div>
+    <div class="jar">
+      <div class="bead" draggable="true" style="background-color: #ffafcc;"></div>
+      <div class="bead" draggable="true" style="background-color: #cdb4db;"></div>
+      <div class="bead shell" draggable="true"></div>
+    </div>
+    <div class="jar">
+      <div class="bead" draggable="true" style="background-color: #ade8f4;"></div>
+      <div class="bead" draggable="true" style="background-color: #caf0f8;"></div>
+      <div class="bead shell" draggable="true"></div>
+    </div>
+    <div class="jar">
+      <div class="bead" draggable="true" style="background-color: #ffb4a2;"></div>
+      <div class="bead" draggable="true" style="background-color: #ffc8dd;"></div>
+      <div class="bead shell" draggable="true"></div>
+    </div>
+  </div>
+
+  <div class="string" id="bracelet"></div>
+  <button class="reset-btn" onclick="resetBracelet()">Reset Bracelet</button>
+
+  <script>
+    const beads = document.querySelectorAll('.bead');
+    const string = document.getElementById('bracelet');
+
+    beads.forEach(bead => {
+      bead.addEventListener('dragstart', (e) => {
+        const style = bead.getAttribute('style');
+        const isShell = bead.classList.contains('shell');
+        e.dataTransfer.setData('text/plain', JSON.stringify({ style, isShell }));
+      });
+    });
+
+    string.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
+
+    string.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const { style, isShell } = JSON.parse(e.dataTransfer.getData('text/plain'));
+      const newBead = document.createElement('div');
+      newBead.className = 'bead placed' + (isShell ? ' shell' : '');
+      if (style) newBead.setAttribute('style', style);
+      string.appendChild(newBead);
+    });
+
+    function resetBracelet() {
+      string.innerHTML = '';
+    }
+  </script>
+</body>
+</html>

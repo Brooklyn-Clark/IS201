@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brooklyn Clark's Resume" />
+  <meta name="author" content="Brooklyn Clark" />
+  <title>Brooklyn Clark - Résumé</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .masthead {
+      background: linear-gradient(to bottom right, #3a8dde, #1e3c72);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #222;
+    }
+
+    h1.site-heading {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .subheading {
+      font-size: 1.5rem;
+      font-style: italic;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    section {
+      background-color: white;
+      margin: 3rem 0;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      border-bottom: 2px solid #e6e6e6;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    section p, section ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    section ul li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    section ul li::before {
+      content: "•";
+      position: absolute;
+      left: -20px;
+      color: #378dd4;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    footer .text-muted {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="#">Brooklyn Clark</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+          <li class="nav-item"><a class="nav-link" href="js/scratch.html">Santiago Chile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <h1 class="site-heading">Brooklyn Clark</h1>
+      <p class="subheading">Business Student · BYU · Class of 2028</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container px-4 px-lg-5">
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>Brigham Young University</strong><br>Business Student (Class of 2028)</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <p><strong>Piano Teacher</strong><br>7 years of experience teaching students of all ages and skill levels.</p>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership">
+      <h2>Leadership</h2>
+      <ul>
+        <li>Cheer Captain – High School Senior Year</li>
+        <li>Young Women President – 1 Year</li>
+      </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Teaching & Communication</li>
+        <li>Leadership & Organization</li>
+        <li>Piano Performance</li>
+        <li>Google Suite, Excel, Canva</li>
+      </ul>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests">
+      <h2>Interests</h2>
+      <p>I love playing the piano, helping others grow, cheering people on, and building meaningful relationships through music and service.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="text-muted small mb-0">© Brooklyn Clark 2025</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
